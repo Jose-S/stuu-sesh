@@ -1,0 +1,107 @@
+/* @link https://utopia.fyi/type/calculator?c=320,32,1.333,1240,64,1.414,3,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --font-size--2: clamp(1.1256rem, 0.8212rem + 1.5218vw, 2.0006rem);
+  --font-size--1: clamp(1.5004rem, 1.0383rem + 2.3104vw, 2.8289rem);
+  --font-size-0: clamp(2rem, 1.3043rem + 3.4783vw, 4rem);
+  --font-size-1: clamp(2.666rem, 1.626rem + 5.2vw, 5.656rem);
+  --font-size-2: clamp(3.5538rem, 2.0081rem + 7.7284vw, 7.9976rem);
+  --font-size-3: clamp(4.7372rem, 2.4515rem + 11.4285vw, 11.3086rem);
+
+  --space-4xs: clamp(0.5rem, 0.3261rem + 0.8696vw, 1rem);
+  --space-3xs: clamp(0.75rem, 0.4891rem + 1.3043vw, 1.5rem);
+  --space-2xs: clamp(1rem, 0.6522rem + 1.7391vw, 2rem);
+  --space-xs: clamp(1.5rem, 0.9783rem + 2.6087vw, 3rem);
+  --space-s: clamp(2rem, 1.3043rem + 3.4783vw, 4rem);
+  --space-m: clamp(3rem, 1.9565rem + 5.2174vw, 6rem);
+  --space-l: clamp(4.5rem, 2.9348rem + 7.8261vw, 9.25rem);
+
+  --space-4xs-3xs: clamp(0.5rem, 0.1522rem + 1.7391vw, 1.5rem);
+  --space-2xs-m: clamp(1rem, -0.7391rem + 8.6957vw, 6rem);
+  --space-xs-2xs: clamp(1.5rem, 1.3261rem + 0.8696vw, 2rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: var(--space-2xs-m);
+  background: white;
+  color: black;
+  font-family: helvetica-lt-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: var(--font-size-0);
+  filter: blur(0.75px);
+}
+
+li {
+  display: list-item;
+  list-style-position: inside;
+}
+
+h1 {
+  font-size: var(--font-size-2);
+  line-height: var(--space-l);
+}
+
+h2 {
+  font-size: var(--font-size-1);
+}
+
+footer {
+  font-size: var(--font-size--1);
+}
+
+/* LAYOUTS */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-block: 0;
+}
+
+[class^="stack"] > * {
+  /* top and bottom margins in horizontal-tb writing mode */
+  margin-block: 0;
+}
+
+.stack-large > * + * {
+  margin-block-start: var(--space-xs);
+}
+
+.stack-medium > * + * {
+  margin-block-start: var(--space-4xs-3xs);
+  /* margin-block-start: 1rem; */
+}
+
+.stack-small > * + * {
+  margin-block-start: 0.5rem;
+}
+
+body > :last-child {
+  margin-block-start: var(--space-m);
+}
+/* UTILITY */
+
+.rotate {
+  --degree: 180deg;
+  text-align: end;
+  transform: rotate(var(--degree));
+
+  /* Safari */
+  -webkit-transform: rotate(var(--degree));
+  /* Firefox */
+  -moz-transform: rotate(var(--degree));
+  /* IE */
+  -ms-transform: rotate(var(--degree));
+  /* Opera */
+  -o-transform: rotate(var(--degree));
+}
