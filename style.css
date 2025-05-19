@@ -35,7 +35,7 @@ body {
   font-weight: 700;
   font-style: normal;
   font-size: var(--font-size-0);
-  filter: blur(0.75px);
+  filter: blur(1.5px);
 }
 
 ol {
