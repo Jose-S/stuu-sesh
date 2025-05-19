@@ -38,9 +38,24 @@ body {
   filter: blur(0.75px);
 }
 
+ol {
+  list-style: none;
+  counter-reset: item;
+  padding-left: 0;
+}
+
 li {
-  display: list-item;
-  list-style-position: inside;
+  /* display: list-item; */
+  /* list-style-position: inside; */
+  counter-increment: item;
+  position: relative;
+  padding-left: 1.125em;
+}
+li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 h1 {
