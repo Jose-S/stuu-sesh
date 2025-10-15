@@ -35,7 +35,7 @@ body {
   font-weight: 700;
   font-style: normal;
   font-size: var(--font-size-0);
-  filter: blur(1.5px);
+  /* filter: blur(1.5px); */
 }
 
 ol {
@@ -104,6 +104,21 @@ footer {
 body > :last-child {
   margin-block-start: var(--space-m);
 }
+
+#canvas {
+  position: sticky;
+  background: transparent;
+  top: calc(-1 * var(--space-2xs-m));
+  left: calc(-1 * var(--space-2xs-m));
+  /* width: calc(100vw - 2 * var(--space-2xs-m)); */
+  /* height: calc(100vh - 2 * var(--space-2xs-m)); */
+  /* height: 100%; */
+  /* width: 100%; */
+  width: calc(100vw - (100vw - 100%));
+  /* width: 100vw; */
+  height: 100vh;
+}
+
 /* UTILITY */
 
 .rotate {
@@ -119,4 +134,33 @@ body > :last-child {
   -ms-transform: rotate(var(--degree));
   /* Opera */
   -o-transform: rotate(var(--degree));
+}
+
+.blur-filter {
+  filter: blur(1.5px);
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+  overflow-x: hidden;
+}
+
+#canvas-board {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Pass through clicks */
+  pointer-events: none;
+  z-index: 9999; /* sits above everything */
+  inset: 0;
+  background: transparent;
 }
