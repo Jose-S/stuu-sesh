@@ -121,9 +121,10 @@ body > :last-child {
 
 /* UTILITY */
 
-.rotate {
+.password-text {
   --degree: 180deg;
   text-align: end;
+  text-transform: lowercase;
   transform: rotate(var(--degree));
 
   /* Safari */
